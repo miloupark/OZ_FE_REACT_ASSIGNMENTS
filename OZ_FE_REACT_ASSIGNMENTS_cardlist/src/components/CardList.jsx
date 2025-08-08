@@ -9,7 +9,9 @@ export default function CardList({ data: listData }) {
     //5. Card 컴포넌트를 map을 이용해 여러번 렌더링할 때, Card에 key를 설정해야합니다.
     return (
         <div className="card-grid">
-            <Card />
+            {listData.map((item) => {
+                return <Card item={item} key={item.id} />;
+            })}
         </div>
     );
 }
